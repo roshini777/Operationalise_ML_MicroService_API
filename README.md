@@ -56,6 +56,10 @@ source .devops/bin/activate
 1. docker_out.txt :  Logs from Docker run are available on this text file
 2. kuberenetes_out.txt : Logs from Kubernetes run are available on this text file
 
+### Github Setup
+
+The project starter code was forked to [this](https://github.com/roshini777/DevOps_Microservices) repository locally. Then after testing out all the project tasks, a new repository was setup and all files are checked into this one for submission and for circleci integration as well. 
+
 ### Circle CI Setup
 
 The project has a pipeline setup in circleci [here](https://app.circleci.com/pipelines/github/roshini777/Operationalise_ML_MicroService_API?filter=all) The config.yml file has the steps described to build it. It has passed the run and the badge has been added on first line of the README.md file. 
