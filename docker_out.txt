@@ -1,0 +1,63 @@
+.devops) ubuntu@ip-172-31-26-122:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./run_docker.sh
+[+] Building 36.4s (9/9) FINISHED                                                                                                                       
+ => [internal] load build definition from Dockerfile                                                                                               0.0s
+ => => transferring dockerfile: 581B                                                                                                               0.0s
+ => [internal] load .dockerignore                                                                                                                  0.0s
+ => => transferring context: 2B                                                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/python:3.7.3-stretch                                                                            0.2s
+ => [1/4] FROM docker.io/library/python:3.7.3-stretch@sha256:205cafadbb7f0c48f2a6d655eb100a9675aa85e6e73958860f488406cce09779                      0.0s
+ => [internal] load build context                                                                                                                  0.0s
+ => => transferring context: 14.88kB                                                                                                               0.0s
+ => CACHED [2/4] WORKDIR /app                                                                                                                      0.0s
+ => [3/4] COPY . app.py /app/                                                                                                                      0.9s
+ => [4/4] RUN pip install --no-cache-dir --upgrade pip &&     pip install --no-cache-dir --trusted-host pypi.python.org numpy &&    pip install   30.9s
+ => exporting to image                                                                                                                             4.4s
+ => => exporting layers                                                                                                                            4.4s
+ => => writing image sha256:0aee717bcabf70e730816350c5526dbf92a0e055ce4d168be221c676594d273b                                                       0.0s 
+ => => naming to docker.io/library/mlcontainer                                                                                                     0.0s 
+REPOSITORY                    TAG       IMAGE ID       CREATED          SIZE                                                                            
+mlcontainer                   latest    0aee717bcabf   4 seconds ago    1.36GB                                                                          
+<none>                        <none>    e8eec834456d   33 minutes ago   1.36GB
+<none>                        <none>    5fb590110fd0   45 minutes ago   1.44GB
+<none>                        <none>    b5b1ec2bcccd   57 minutes ago   1.44GB
+gcr.io/k8s-minikube/kicbase   v0.0.40   c6cc01e60919   2 months ago     1.19GB
+ * Serving Flask app 'app'
+ * Debug mode: on
+/usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from ._gradient_boosting import predict_stages
+/usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from ._gradient_boosting import predict_stages
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator DecisionTreeRegressor from version 0.20.3 when using version 0.20.2. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator GradientBoostingRegressor from version 0.20.3 when using version 0.20.2. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.17.0.2:80
+Press CTRL+C to quit
+ * Restarting with stat
+/usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from ._gradient_boosting import predict_stages
+/usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from ._gradient_boosting import predict_stages
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator DecisionTreeRegressor from version 0.20.3 when using version 0.20.2. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator GradientBoostingRegressor from version 0.20.3 when using version 0.20.2. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+ * Debugger is active!
+ * Debugger PIN: 513-993-329
+[2023-09-19 12:27:03,658] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2023-09-19 12:27:03,682] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2023-09-19 12:27:03,695] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2023-09-19 12:27:03,698] INFO in app: output prediction: [20.35373177134412]
+172.17.0.1 - - [19/Sep/2023 12:27:03] "POST /predict HTTP/1.1" 200 -
